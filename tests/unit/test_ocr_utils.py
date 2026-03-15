@@ -1,5 +1,7 @@
 from pathlib import Path
+
 from PIL import Image
+
 from app.services.ocr.pipeline import collect_pages
 
 

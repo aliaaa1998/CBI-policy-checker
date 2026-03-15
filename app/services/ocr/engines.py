@@ -1,5 +1,6 @@
 from pathlib import Path
 from typing import Any
+
 import pytesseract
 from paddleocr import PaddleOCR
 

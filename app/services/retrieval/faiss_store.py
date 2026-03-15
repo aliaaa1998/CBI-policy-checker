@@ -1,7 +1,8 @@
 import json
-from pathlib import Path
+
 import faiss
 import numpy as np
+
 from app.core.config import settings
 
 

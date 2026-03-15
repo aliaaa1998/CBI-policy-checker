@@ -1,5 +1,7 @@
 from logging.config import fileConfig
+
 from sqlalchemy import engine_from_config, pool
+
 from alembic import context
 from app.db.base import Base
 from app.models import entities  # noqa: F401

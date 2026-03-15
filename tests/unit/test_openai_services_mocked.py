@@ -1,6 +1,7 @@
 from types import SimpleNamespace
-from app.services.embeddings.openai_embedder import EmbeddingService
+
 from app.services.compliance.openai_responder import ResponseService
+from app.services.embeddings.openai_embedder import EmbeddingService
 
 
 class FakeEmbeddingsClient:

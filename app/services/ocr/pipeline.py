@@ -1,10 +1,11 @@
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
+
 import fitz
 from PIL import Image
+
 from app.services.ocr.engines import run_paddle, run_tesseract
-from app.services.preprocessing.image import preprocess_image
 
 
 @dataclass
@@ -19,6 +20,7 @@ class OCRPageResult:
 
 
 def pdf_to_images(pdf_path: Path, out_dir: Path) -> list[Path]:
+    out_dir.mkdir(parents=True, exist_ok=True)
     doc = fitz.open(pdf_path)
     images = []
     for idx, page in enumerate(doc, start=1):
@@ -30,6 +32,7 @@ def pdf_to_images(pdf_path: Path, out_dir: Path) -> list[Path]:
 
 
 def collect_pages(path: Path, out_dir: Path) -> list[Path]:
+    out_dir.mkdir(parents=True, exist_ok=True)
     if path.suffix.lower() == ".pdf":
         return pdf_to_images(path, out_dir)
     img = Image.open(path)

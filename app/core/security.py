@@ -1,5 +1,5 @@
-from pathlib import Path
 import uuid
+from pathlib import Path
 
 ALLOWED_EXTENSIONS = {".pdf", ".png", ".jpg", ".jpeg", ".tif", ".tiff"}
 
